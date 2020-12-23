@@ -1,8 +1,6 @@
 # MMsegmenter
 Segmentation code for Mother Machine experiments (fluorescence)
 
-use the code in v2
-
 the main file you will run is a jupyter notebook called segment_images-official-training.ipynb
 - to help you learn how to use the code
 - when you know what you are doing, you can use the template notebook for your experiments
