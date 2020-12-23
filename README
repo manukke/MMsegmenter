@@ -1,0 +1,41 @@
+use the code in v1
+
+the main file you will run is a jupyter notebook called segment_images-official-training.ipynb
+- to help you learn how to use the code
+- when you know what you are doing, you can use the template notebook for your experiments
+
+However, before you can jump right in, you need to install some stuff. 
+
+Begin by downloading anaconda for python 3, on your computer. 
+
+Once installed, look at the script: imports.sh and ensure that the path variables are correct. then run bash imports.sh
+
+If it is successful, it should install and update several items.
+
+You should now be ready to run things locally using the command:
+
+jupyter notebook --NotebookApp.iopub_data_rate_limit=1.0e10 --port=4940
+
+
+to run things on the cluster:
+
+you need to read about and download Jupystra
+then setup your environment on the cluster, i.e. install anaconda and run the imports script on the cluster, use a compute node
+next copy the mothermachine code to the cluster
+
+put the mothermachine file into anaconda's site packages, ~/anaconda3/lib/python3.6/site-packages/mothermachine
+
+This will allow the cluster workers to access them.
+
+Finally, note that to copy file to the cluster you need to use a transfer node:
+
+ssh uname@transfer.hms.harvard.edu
+
+then you can use rsync to copy files.
+
+to connect and run analysis on the server, you run Jupystra with something like:
+
+~/anaconda3/bin/python JupyStra.py uname --wall_time=1:30:00 --cores=2 --mem=60G --count=120 --connect
+
+
+where you replace uname with your username
